@@ -47,13 +47,23 @@ def user_input():
                             input('Enter the size of array and sum to be found separated by a space: ').split(' ') if
                             val is not '']
         except ValueError:
-            print('size of array and sum should only be a positive integer')
             return None
-        print('Enter the elements of Array: ')
         temp_array = [int(val.strip()) for val in
                       input('Enter ' + str(size_and_sum[0]) + ' numbers separated by space: ').split(' ') if
                       val is not '']
-    print(temp_array)
+
+        find_sub_array(size_and_sum, temp_array)
+
+
+def find_sub_array(size_and_sum, temp_array):
+    sum = 0
+    start_index = 1
+    for i in range(len(temp_array)):
+        sum += temp_array[i]
+        if sum == size_and_sum[1]:
+            print(i + 1, j + i + 1)
+            return
+    print(-1)
 
 
 user_input()
